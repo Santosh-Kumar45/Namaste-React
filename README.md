@@ -79,3 +79,14 @@ export const component;
 
 import {Component} from "path";
 
+
+
+# React Hooks
+
+(Normal JS utility functions)--this was written by facebook developers
+
+there are 2 types of hooks
+
+1> useState() -- superpowerful State variables in react(80% we use)
+
+2> useEffect()
