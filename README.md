@@ -95,12 +95,12 @@ there are 2 types of hooks
 
 # Actual DOM VS Virtual DOM :-
 
-# 🐢 Actual DOM
+- 🐢 Actual DOM
 The real HTML page in your browser.
 When something changes,
 the browser repaints the entire page — very slow!
 
-# ⚡ Virtual DOM
+- ⚡ Virtual DOM
 A lightweight copy of the real DOM stored in memory by React. 
 React updates only the changed parts — very fast!
 
@@ -113,6 +113,3 @@ React updates only the changed parts — very fast!
         ↓
 3. Updates ONLY <h1> in real DOM
    (not the entire page!)
-
-
-   
