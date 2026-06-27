@@ -1,6 +1,18 @@
-import {LOGO_URL} from "../utils/constant.js";
+import { LOGO_URL } from "../utils/constant.js";
+import { useState ,useEffect} from "react";
 
 const Header = () => {
+
+    const [btnNameReact, setBtnNameReact] = useState("Login");
+
+
+    //if no dependency array => useEffect is called on every render .
+
+    //if dependency array is empty = []=> useEffecect is called onn initial render (just one time).
+    useEffect(()=>{
+        console.log("useEffect called")
+    },[]);
+
     return (
         <div className="header">
             <div className="logo-container">
@@ -12,6 +24,13 @@ const Header = () => {
                     <li>About Us</li>
                     <li>Contact Us</li>
                     <li>Cart</li>
+                    <button
+                        className="login"
+                        onClick={() => {
+                            btnNameReact == "Login" ? setBtnNameReact("Logout") : setBtnNameReact("Login");
+
+                        }}>{btnNameReact}
+                    </button>
                 </ul>
             </div>
         </div>
