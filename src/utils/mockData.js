@@ -1516,6 +1516,135 @@ const resList= [
           }
         }
       },
+       {
+        "card": {
+          "card": {
+            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
+            "info": {
+              "id": "1224934",
+              "name": "Big Bowl",
+              "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/10/8/8781420b-de00-4da5-b590-b65fadafd1a2_1224934.jpg",
+              "locality": "Rani Kamlapati (Habibganj) Railway Station",
+              "areaName": "Bansal Mall",
+              "costForTwo": "₹250 for two",
+              "cuisines": [
+                "Chinese",
+                "Tibetan",
+                "Desserts"
+              ],
+              "avgRating": 4.3,
+              "parentId": "434792",
+              "avgRatingString": "4.3",
+              "totalRatingsString": "161",
+              "promoted": true,
+              "adTrackingId": "cid=21ed96a1-9618-4a96-bf6d-1a9340329c25~p=0~adgrpid=21ed96a1-9618-4a96-bf6d-1a9340329c25#ag47~mp=SWIGGY_IN~bl=FOOD~aet=RESTAURANT~aeid=1224934~plpr=COLLECTION~eid=87ed3039-eba0-497c-81a5-fe6349f5fac6~srvts=1782810607504~collid=83648",
+              "sla": {
+                "deliveryTime": 40,
+                "lastMileTravel": 6.1,
+                "serviceability": "SERVICEABLE",
+                "slaString": "40-50 mins",
+                "lastMileTravelString": "6.1 km",
+                "iconType": "ICON_TYPE_EMPTY"
+              },
+              "availability": {
+                "nextCloseTime": "2026-06-30 23:59:00",
+                "opened": true
+              },
+              "badges": {
+                
+              },
+              "isOpen": true,
+              "type": "F",
+              "badgesV2": {
+                "entityBadges": {
+                  "imageBased": {
+                    
+                  },
+                  "textExtendedBadges": {
+                    
+                  },
+                  "textBased": {
+                    
+                  }
+                }
+              },
+              "aggregatedDiscountInfoV3": {
+                "header": "70% OFF",
+                "subHeader": "UPTO ₹130",
+                "logoCtx": {
+                  "text": "BENEFITS"
+                }
+              },
+              "loyaltyDiscoverPresentationInfo": {
+                "logoCtx": {
+                  "text": "BENEFITS",
+                  "logo": "v1634558776/swiggy_one/OneLogo_3x.png"
+                },
+                "freedelMessage": "FREE DELIVERY"
+              },
+              "orderabilityCommunication": {
+                "title": {
+                  
+                },
+                "subTitle": {
+                  
+                },
+                "message": {
+                  
+                },
+                "customIcon": {
+                  
+                },
+                "commsStyling": {
+                  
+                }
+              },
+              "differentiatedUi": {
+                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                "differentiatedUiMediaDetails": {
+                  "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                  "lottie": {
+                    
+                  },
+                  "video": {
+                    
+                  }
+                }
+              },
+              "reviewsSummary": {
+                
+              },
+              "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+              "restaurantOfferPresentationInfo": {
+                
+              },
+              "externalRatings": {
+                "aggregatedRating": {
+                  "rating": "--"
+                }
+              },
+              "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+              "campaignId": "21ed96a1-9618-4a96-bf6d-1a9340329c25",
+              "priceComparisonComms": {
+                
+              }
+            },
+            "analytics": {
+              
+            },
+            "cta": {
+              "link": "swiggy://menu?restaurant_id=1224934&source=collection&query=Burger",
+              "text": "RESTAURANT_MENU",
+              "type": "DEEPLINK"
+            },
+            "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food"
+          },
+          "relevance": {
+            "type": "RELEVANCE_TYPE_ON_MENU_RETURN",
+            "sectionId": "MENU_RETURN_FOOD"
+          }
+        }
+      },
 ]
 
 export default resList;

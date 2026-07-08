@@ -3,32 +3,53 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header.js";
 import Body from "./components/Body.js";
 import About from "./components/About.js";
-import { createBrowserRouter, RouterProvider } from "react-router";
+import Contact from "./components/Contact.js";
+import Error from "./components/Error.js";
+import { createBrowserRouter, RouterProvider ,Outlet } from "react-router";
+import RestaurantMenu from "./components/RestaurantMenu.js";
 
 //not using keys (not acceptable) <<<< index as key <<<<<<<<<<unique id(best practices).
 
 const AppLayout = () => {
     return (<div className="app">
         <Header />
-        <Body />
+        <Outlet/>
     </div>
     );
 };
 
 
-const appRouter=createBrowserRouter([
+const appRouter = createBrowserRouter([
     {
-        path:"/",
-        element: <AppLayout/>,
+        path: "/",
+        element: <AppLayout />,
+        children: [
+            {
+                path:"/",
+                element:<Body/>
+            },
+            {
+                path: "/about",
+                element: <About />
+
+            },
+            {
+                path: "/contact",
+                element: <Contact />,
+
+            },
+            {
+                path:"/restaurants/:resId",
+                element:<RestaurantMenu/>
+            }
+        ],
+        errorElement: <Error />,
     },
-    {
-        path:"/about",
-        element:<About/>
-    },
+
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render( <RouterProvider router={appRouter}/> );
+root.render(<RouterProvider router={appRouter} />);
 
 
 

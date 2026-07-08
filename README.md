@@ -115,3 +115,8 @@ React updates only the changed parts — very fast!
         ↓
 3. Updates ONLY <h1> in real DOM
    (not the entire page!)
+
+
+# 2 type of Routing
+-client side routing.
+-server side routing.
