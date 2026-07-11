@@ -2,14 +2,15 @@ import resList from "../utils/mockData.js";
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from './Shimmer.js';
+import useOnlineStatus from "../utils/useOnlineStatus.js";
 
 const Body = () => {
 
     //Local state variable - super powerful variable
     const [listOfRestaurants, setlistOfRestaurants] = useState(resList);
-    const [filteredRestaurant,setFilteredRestaurant]=useState([]);
+    const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
-    const [searchText,setSearchText]=useState("");
+    const [searchText, setSearchText] = useState("");
 
     //Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
     console.log("Body Rendered");
@@ -111,31 +112,35 @@ const Body = () => {
     //     },
     // ];
 
+    const onlineStatus = useOnlineStatus();
+    if (onlineStatus == false)
+        return (
+            <h1>Looks like you're offline !! please check your internet connection </h1>
+        );
 
-
-    return (
+    return(
         <div className="body">
             <div className="filter">
                 <div className="search">
                     <input
-                     type="text" 
-                     className="search-box" 
-                     value={searchText} 
-                     onChange={(e)=>{
-                        setSearchText(e.target.value);
-                     }}/>
-                    <button onClick={()=>{
+                        type="text"
+                        className="search-box"
+                        value={searchText}
+                        onChange={(e) => {
+                            setSearchText(e.target.value);
+                        }} />
+                    <button onClick={() => {
                         //filter the restraunt cards and update the UI
                         //searchText
-                       console.log(searchText); 
+                        console.log(searchText);
 
-                       const filteredRestaurent=listOfRestaurants.filter((res)=>
-                        res.card.card.info.name.toLowerCase().includes(searchText.toLowerCase())
-                       );
-                       setFilteredRestaurant(filteredRestaurent);
+                        const filteredRestaurent = listOfRestaurants.filter((res) =>
+                            res.card.card.info.name.toLowerCase().includes(searchText.toLowerCase())
+                        );
+                        setFilteredRestaurant(filteredRestaurent);
                     }}
                     >
-                    search
+                        search
                     </button>
                 </div>
                 <button className="filter-btn"

@@ -1,16 +1,18 @@
 import { useState } from "react";
 const User = (props) => {
 
-    const [count]=useState(0);
-    const [count1]=useState(2);
+   
+    const [count,setCount]=useState(0);
    
 
     return (
         
         <div className="user-card">
-            
+            <button onClick={()=>{
+               setCount(count=>count+1)
+            }}>click here</button>
             <h1>Count={count}</h1>
-            <h1>Count1={count1}</h1>
+           
             <h2>Name:{props.name}</h2>
             <h3>Location: dehradun</h3>
             <h4>Contact: @akshaymarch7</h4>
