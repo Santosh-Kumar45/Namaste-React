@@ -1,7 +1,7 @@
 Parcel Bundler — Complete Guide 📦
 📌 What is Parcel?
 
-Easy language: Parcel ek zero configuration bundler hai — matlab koi config file
+ Parcel ek zero configuration bundler hai — matlab koi config file
 likhne ki zaroorat nahi! Bas install karo aur run karo! ✅
 
 

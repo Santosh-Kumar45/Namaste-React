@@ -1,5 +1,5 @@
 import resList from "../utils/mockData.js";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard ,{withPromotedLabel}from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from './Shimmer.js';
 import useOnlineStatus from "../utils/useOnlineStatus.js";
@@ -12,8 +12,10 @@ const Body = () => {
 
     const [searchText, setSearchText] = useState("");
 
+    const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
     //Whenever state variables update, react triggers a reconciliation cycle(re-renders the component)
-    console.log("Body Rendered");
+    console.log("Body Rendered",listOfRestaurants);
 
     useEffect(() => {
         fetchData();
@@ -118,46 +120,53 @@ const Body = () => {
             <h1>Looks like you're offline !! please check your internet connection </h1>
         );
 
-    return(
+    return (
         <div className="body">
-            <div className="filter">
-                <div className="search">
+            <div className="flex">
+                <div className="search p-4 m-4 ">
                     <input
                         type="text"
-                        className="search-box"
+                        className="border border-solid border-black"
                         value={searchText}
                         onChange={(e) => {
                             setSearchText(e.target.value);
                         }} />
-                    <button onClick={() => {
-                        //filter the restraunt cards and update the UI
-                        //searchText
-                        console.log(searchText);
+                    <button className="px-4 py-2 bg-green-100 m-4 rounded-lg"
+                        onClick={() => {
+                            //filter the restraunt cards and update the UI
+                            //searchText
+                            console.log(searchText);
 
-                        const filteredRestaurent = listOfRestaurants.filter((res) =>
-                            res.card.card.info.name.toLowerCase().includes(searchText.toLowerCase())
-                        );
-                        setFilteredRestaurant(filteredRestaurent);
-                    }}
+                            const filteredRestaurent = listOfRestaurants.filter((res) =>
+                                res.card.card.info.name.toLowerCase().includes(searchText.toLowerCase())
+                            );
+                            setFilteredRestaurant(filteredRestaurent);
+                        }}
                     >
                         search
                     </button>
                 </div>
-                <button className="filter-btn"
-                    onClick={() => {
-                        //filter logic here
-                        const filteredList = listOfRestaurants.filter(
-                            (res) => res.card.card.info.avgRating > 4
-                        );
-                        setlistOfRestaurents(filteredList);
-                    }}
-                >
-                    Top Rated Restaurants
-                </button>
+                <div className="search m-4 p-4 flex items-center ">
+                    <button
+                        className="px-4 py-2 bg-gray-200 rounded-lg"
+                        onClick={() => {
+                            //filter logic here
+                            const filteredList = listOfRestaurants.filter(
+                                (res) => res.card.card.info.avgRating > 4
+                            );
+                            setlistOfRestaurents(filteredList);
+                        }}
+                    >
+                        Top Rated Restaurants
+                    </button>
+                </div>
+
             </div>
 
-            <div className="res-container">
+            <div className="flex flex-wrap">
                 {resList.map((restaurant) => (
+                    //if the restaurant is promoted then add a promoted label to it.
+                    
                     <RestaurantCard key={restaurant.card.card.info.id} resData={restaurant} />
                 ))}
 

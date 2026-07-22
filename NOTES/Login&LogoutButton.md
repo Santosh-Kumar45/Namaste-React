@@ -5,5 +5,5 @@ const [btnNameReact, setBtnNameReact] = useState("Login");
         className="login"
         onClick={() => {
         btnNameReact=="Login"? setBtnNameReact("Logout"):setBtnNameReact("Login");             
-        }}>{btnNameReact}
+        }>{btnNameReact}
 </button>

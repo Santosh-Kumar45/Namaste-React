@@ -1,13 +1,17 @@
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-import {MENU_URL} from "../utils/constant.js"
+import { MENU_URL } from "../utils/constant.js"
 // import { useParams } from "react-router-dom";
+import RestaurantCategory from "./RestaurantCategory.js";
+
+
+
 const RestaurantMenu = () => {
 
     const [resInfo, setResInfo] = useState(null);
-//  const {resId}=useParams();
+    //  const {resId}=useParams();
 
-//  const resInfo=useRestaurantMenu(resId);
+    //  const resInfo=useRestaurantMenu(resId);
 
     useEffect(() => {
         fetchMenu();
@@ -24,19 +28,19 @@ const RestaurantMenu = () => {
 
     if (resInfo == null) return <Shimmer />;
 
-const {name , cuisines , costForTwo}=resInfo?.cards[8]?.card?.card?.info ||{};
+    const { name, cuisines, costForTwo } = resInfo?.cards[8]?.card?.card?.info || {};
 
 
 
 
 
-//card.card.itemCards.card.info.name/price
-//card.info.name/price
+    //card.card.itemCards.card.info.name/price
+    //card.info.name/price
 
     return (
-        <div className="menu">
-            <h1>{name}</h1>
-            <h3>{cuisines ?.join(",")}</h3>
+        <div className="text-center">
+            <h1 className="font-bold my-6 text-2xl">{name}</h1>
+            <h3 className="font-bold text-lg">{cuisines?.join(",")}</h3>
             <h3>{costForTwo}</h3>
             <h2>Menu</h2>
             <ul>
@@ -44,6 +48,9 @@ const {name , cuisines , costForTwo}=resInfo?.cards[8]?.card?.card?.info ||{};
                 <li>Burgers</li>
                 <li>Diet Coke</li>
             </ul>
+            {categories.map((category) => {
+                <RestaurantCategory />
+            })}
         </div>
     );
 };
